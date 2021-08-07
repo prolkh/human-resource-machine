@@ -1,0 +1,19 @@
+a:
+    INBOX   
+    COPYTO   0
+    COPYTO   1
+    INBOX   
+    JUMPZ    d
+    COPYTO   2
+b:
+    BUMPDN   2
+    JUMPZ    c
+    COPYFROM 0
+    ADD      1
+    COPYTO   0
+    JUMP     b
+c:
+    COPYFROM 0
+d:
+    OUTBOX  
+    JUMP     a

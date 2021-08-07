@@ -1,0 +1,16 @@
+    JUMP     d
+a:
+    INBOX   
+    JUMPN    e
+b:
+    COPYFROM 5
+c:
+    OUTBOX  
+d:
+    INBOX   
+    JUMPN    a
+    INBOX   
+    JUMPN    b
+e:
+    COPYFROM 4
+    JUMP     c

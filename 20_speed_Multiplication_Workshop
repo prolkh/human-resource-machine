@@ -1,0 +1,42 @@
+    JUMP     f
+a:
+    OUTBOX  
+    INBOX   
+    JUMP     e
+b:
+c:
+d:
+    OUTBOX  
+e:
+f:
+    INBOX   
+    JUMPZ    a
+    COPYTO   0
+    COPYTO   5
+    INBOX   
+    JUMPZ    b
+    COPYTO   1
+    COPYTO   6
+    SUB      0
+    JUMPN    i
+g:
+    BUMPDN   0
+    JUMPZ    h
+    COPYFROM 1
+    ADD      6
+    COPYTO   1
+    JUMP     g
+h:
+    COPYFROM 1
+    JUMP     c
+i:
+j:
+    BUMPDN   1
+    JUMPZ    k
+    COPYFROM 0
+    ADD      5
+    COPYTO   0
+    JUMP     j
+k:
+    COPYFROM 0
+    JUMP     d
